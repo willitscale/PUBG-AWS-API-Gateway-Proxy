@@ -1,0 +1,350 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0",
+      "title": "PUBG Proxy"
+    },
+    "basePath": "/pubg",
+    "schemes": [
+      "https"
+    ],
+    "paths": {
+      "/leaderboards/{mode}": {
+        "get": {
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "mode",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "200 response",
+              "schema": {
+                "$ref": "#/definitions/Empty"
+              }
+            }
+          },
+          "x-amazon-apigateway-integration": {
+            "uri": "https://api.pubg.com/shards/steam/leaderboards/{mode}",
+            "responses": {
+              "default": {
+                "statusCode": "200"
+              }
+            },
+            "requestParameters": {
+              "integration.request.header.Accept": "'application/vnd.api+json'",
+              "integration.request.header.Authorization": "'Bearer <<YOUR_PUBG_API_KEY>>'",
+              "integration.request.path.mode": "method.request.path.mode"
+            },
+            "passthroughBehavior": "when_no_match",
+            "httpMethod": "GET",
+            "type": "http_proxy"
+          }
+        }
+      },
+      "/matches/{match}": {
+        "get": {
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "match",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "200 response",
+              "schema": {
+                "$ref": "#/definitions/Empty"
+              }
+            }
+          },
+          "x-amazon-apigateway-integration": {
+            "uri": "https://api.pubg.com/shards/steam/matches/{match}",
+            "responses": {
+              "default": {
+                "statusCode": "200"
+              }
+            },
+            "requestParameters": {
+              "integration.request.path.match": "method.request.path.match",
+              "integration.request.header.Accept": "'application/vnd.api+json'",
+              "integration.request.header.Authorization": "'Bearer <<YOUR_PUBG_API_KEY>>'"
+            },
+            "passthroughBehavior": "when_no_match",
+            "httpMethod": "GET",
+            "type": "http_proxy"
+          }
+        }
+      },
+      "/players": {
+        "get": {
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "200 response",
+              "schema": {
+                "$ref": "#/definitions/Empty"
+              }
+            }
+          },
+          "x-amazon-apigateway-integration": {
+            "uri": "https://api.pubg.com/shards/steam/players",
+            "responses": {
+              "default": {
+                "statusCode": "200"
+              }
+            },
+            "requestParameters": {
+              "integration.request.header.Accept": "'application/vnd.api+json'",
+              "integration.request.header.Authorization": "'Bearer <<YOUR_PUBG_API_KEY>>'"
+            },
+            "passthroughBehavior": "when_no_match",
+            "httpMethod": "GET",
+            "type": "http_proxy"
+          }
+        }
+      },
+      "/players/{account}": {
+        "get": {
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "account",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "200 response",
+              "schema": {
+                "$ref": "#/definitions/Empty"
+              }
+            }
+          },
+          "x-amazon-apigateway-integration": {
+            "uri": "https://api.pubg.com/shards/steam/players/{account}",
+            "responses": {
+              "default": {
+                "statusCode": "200"
+              }
+            },
+            "requestParameters": {
+              "integration.request.header.Accept": "'application/vnd.api+json'",
+              "integration.request.header.Authorization": "'Bearer <<YOUR_PUBG_API_KEY>>'",
+              "integration.request.path.account": "method.request.path.account"
+            },
+            "passthroughBehavior": "when_no_match",
+            "httpMethod": "GET",
+            "type": "http_proxy"
+          }
+        }
+      },
+      "/players/{account}/seasons/lifetime": {
+        "get": {
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "account",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "200 response",
+              "schema": {
+                "$ref": "#/definitions/Empty"
+              }
+            }
+          },
+          "x-amazon-apigateway-integration": {
+            "uri": "https://api.pubg.com/shards/steam/players/{account}/seasons/lifetime",
+            "responses": {
+              "default": {
+                "statusCode": "200"
+              }
+            },
+            "requestParameters": {
+              "integration.request.header.Accept": "'application/vnd.api+json'",
+              "integration.request.header.Authorization": "'Bearer <<YOUR_PUBG_API_KEY>>'",
+              "integration.request.path.account": "method.request.path.account"
+            },
+            "passthroughBehavior": "when_no_match",
+            "httpMethod": "GET",
+            "type": "http_proxy"
+          }
+        }
+      },
+      "/players/{account}/seasons/{season}": {
+        "get": {
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "account",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "season",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "200 response",
+              "schema": {
+                "$ref": "#/definitions/Empty"
+              }
+            }
+          },
+          "x-amazon-apigateway-integration": {
+            "uri": "https://api.pubg.com/shards/steam/players/{account}/seasons/{season}",
+            "responses": {
+              "default": {
+                "statusCode": "200"
+              }
+            },
+            "requestParameters": {
+              "integration.request.path.season": "method.request.path.season",
+              "integration.request.header.Accept": "'application/vnd.api+json'",
+              "integration.request.header.Authorization": "'Bearer <<YOUR_PUBG_API_KEY>>'",
+              "integration.request.path.account": "method.request.path.account"
+            },
+            "passthroughBehavior": "when_no_match",
+            "httpMethod": "GET",
+            "type": "http_proxy"
+          }
+        }
+      },
+      "/seasons": {
+        "get": {
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "200 response",
+              "schema": {
+                "$ref": "#/definitions/Empty"
+              }
+            }
+          },
+          "x-amazon-apigateway-integration": {
+            "uri": "https://api.pubg.com/shards/steam/seasons",
+            "responses": {
+              "default": {
+                "statusCode": "200"
+              }
+            },
+            "requestParameters": {
+              "integration.request.header.Accept": "'application/vnd.api+json'",
+              "integration.request.header.Authorization": "'Bearer <<YOUR_PUBG_API_KEY>>'"
+            },
+            "passthroughBehavior": "when_no_match",
+            "httpMethod": "GET",
+            "type": "http_proxy"
+          }
+        }
+      },
+      "/tournaments": {
+        "get": {
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "200 response",
+              "schema": {
+                "$ref": "#/definitions/Empty"
+              }
+            }
+          },
+          "x-amazon-apigateway-integration": {
+            "uri": "https://api.pubg.com/tournaments",
+            "responses": {
+              "default": {
+                "statusCode": "200"
+              }
+            },
+            "requestParameters": {
+              "integration.request.header.Accept": "'application/vnd.api+json'",
+              "integration.request.header.Authorization": "'Bearer <<YOUR_PUBG_API_KEY>>'"
+            },
+            "passthroughBehavior": "when_no_match",
+            "httpMethod": "GET",
+            "type": "http_proxy"
+          }
+        }
+      },
+      "/tournaments/{tournament}": {
+        "get": {
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "tournament",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "200 response",
+              "schema": {
+                "$ref": "#/definitions/Empty"
+              }
+            }
+          },
+          "x-amazon-apigateway-integration": {
+            "uri": "https://api.pubg.com/tournaments/{tournament}",
+            "responses": {
+              "default": {
+                "statusCode": "200"
+              }
+            },
+            "requestParameters": {
+              "integration.request.header.Accept": "'application/vnd.api+json'",
+              "integration.request.header.Authorization": "'Bearer <<YOUR_PUBG_API_KEY>>'",
+              "integration.request.path.tournament": "method.request.path.tournament"
+            },
+            "passthroughBehavior": "when_no_match",
+            "httpMethod": "GET",
+            "type": "http_proxy"
+          }
+        }
+      }
+    },
+    "definitions": {
+      "Empty": {
+        "type": "object",
+        "title": "Empty Schema"
+      }
+    }
+  }

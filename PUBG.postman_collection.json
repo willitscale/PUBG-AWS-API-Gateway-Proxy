@@ -1,0 +1,257 @@
+{
+	"variables": [],
+	"info": {
+		"name": "PUBG",
+		"_postman_id": "215556ce-a880-5123-a373-09309a1a9585",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Players",
+			"description": "",
+			"item": [
+				{
+					"name": "Seasons",
+					"description": "",
+					"item": [
+						{
+							"name": "GET Player Seaon",
+							"request": {
+								"url": "https://{{pubg_aws_proxy}}/players/{{pubg_acount}}/seasons/{{pubg_season}}",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/vnd.api+json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{pubg_api_key}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"description": null
+							},
+							"response": []
+						},
+						{
+							"name": "GET Player Seaon Lifetime",
+							"request": {
+								"url": "https://{{pubg_aws_proxy}}/players/{{pubg_account}}/seasons/lifetime",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/vnd.api+json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{pubg_api_key}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"description": null
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "GET Player",
+					"request": {
+						"url": "https://{{pubg_aws_proxy}}/players/{{pubg_account}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/vnd.api+json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{pubg_api_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "GET Players",
+					"request": {
+						"url": {
+							"raw": "https://{{pubg_aws_proxy}}/players?filter[playerNames]={{pubg_player}}",
+							"protocol": "https",
+							"host": [
+								"{{pubg_aws_proxy}}"
+							],
+							"path": [
+								"players"
+							],
+							"query": [
+								{
+									"key": "filter[playerNames]",
+									"value": "{{pubg_player}}",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/vnd.api+json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{pubg_api_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Matches",
+			"description": "",
+			"item": [
+				{
+					"name": "GET Match",
+					"request": {
+						"url": "https://{{pubg_aws_proxy}}/matches/{{pubg_match}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/vnd.api+json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{pubg_api_key}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Seasons",
+			"description": "",
+			"item": [
+				{
+					"name": "GET Seasons",
+					"request": {
+						"url": "https://{{pubg_aws_proxy}}/seasons",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/vnd.api+json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{pubg_api_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tournaments",
+			"description": "",
+			"item": [
+				{
+					"name": "GET Tournaments",
+					"request": {
+						"url": "https://{{pubg_aws_proxy}}/tournaments",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/vnd.api+json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{pubg_api_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GET Tournaments copy",
+					"request": {
+						"url": "https://{{pubg_aws_proxy}}/tournaments/{{pubg_tournament}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/vnd.api+json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{pubg_api_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
