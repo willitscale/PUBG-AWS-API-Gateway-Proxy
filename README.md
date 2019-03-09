@@ -19,9 +19,9 @@ Proxy for use with the PUBG AWS API Gateway Proxy
 pubg_aws_proxy:AWS_API_GATEWAY_URL
 pubg_account:account.1c479e79987041cfa3269a3e7544ed35
 pubg_player:Stevethemage
-pubg_match:MATCH_ID
+pubg_match:e0116b91-65e0-4ded-8e59-2f675ca03902
 pubg_tournament:cn-ppe
 pubg_season:division.bro.official.2017-beta
-pubg_api_key:YOUR_PUBG_API_KEY
+pubg_aws_platform:steam
 ```
 10. Enjoy!
